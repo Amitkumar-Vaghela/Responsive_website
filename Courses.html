@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <div class="nav">
+      <h2>Logo</h2>
+      <div class="nav-part2" id="navbar-links"></div>
+    </div>
+
+    <div class="page-content">
+      <h1>Explore Our Courses</h1>
+      <p>Master coding with industry-led projects and hands-on learning.</p>
+    </div>
+  </div>
+
+  <script>
+    window.scrollTo(0, 0);
+    window.onscroll = () => window.scrollTo(0, 0);
+
+    const navbar = document.getElementById("navbar-links");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      navbar.innerHTML = `
+        <h4><a href="store.html">Store</a></h4>
+        <h4><a href="career.html">Career</a></h4>
+        <h4><a href="courses.html">Courses</a></h4>
+        <h4><a href="blogs.html">Blogs</a></h4>
+        <h4><a href="account.html">Account</a></h4>
+        <h4><a href="#" onclick="logout()">Logout</a></h4>`;
+    } else {
+      navbar.innerHTML = `
+        <h4><a href="login.html">Login</a></h4>
+        <h4><a href="signup.html">Signup</a></h4>`;
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      alert("You have been logged out!");
+      location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

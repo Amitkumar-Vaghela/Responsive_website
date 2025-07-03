@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Home - Learn Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="nav">
+      <h2>Logo</h2>
+      <div class="nav-part2" id="navbar-links">
+        <!-- Dynamic content by JS -->
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="left">
+        <h1>Learn from the <span>Coolest coding</span></h1>
+        <p>Boost your skills with our interactive courses and tutorials.</p>
+        <button class="start-learning-btn" onclick="location.href='login.html'">Start Learning</button>
+      </div>
+      <div class="right">
+      
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar Control Script -->
+  <script>
+    const navbar = document.getElementById("navbar-links");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      navbar.innerHTML = `
+        <h4><a href="store.html">Store</a></h4>
+        <h4><a href="career.html">Career</a></h4>
+        <h4><a href="courses.html">Courses</a></h4>
+        <h4><a href="blogs.html">Blogs</a></h4>
+        <h4><a href="account.html">Account</a></h4>
+        <h4><a href="#" onclick="logout()">Logout</a></h4>
+      `;
+    } else {
+      navbar.innerHTML = `
+        <h4><a href="login.html">Login</a></h4>
+        <h4><a href="signup.html">Signup</a></h4>
+      `;
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

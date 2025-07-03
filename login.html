@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="nav">
+      <h2>Logo</h2>
+      <div class="nav-part2" id="navbar-links">
+        <!-- Dynamic navbar -->
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <a href="signup.html">Don't have an account? Signup</a>
+    </div>
+  </div>
+
+  <!-- Navbar & Login Script -->
+  <script>
+    const navbar = document.getElementById("navbar-links");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn === "true") {
+      navbar.innerHTML = `
+        <h4><a href="store.html">Store</a></h4>
+        <h4><a href="career.html">Career</a></h4>
+        <h4><a href="courses.html">Courses</a></h4>
+        <h4><a href="blogs.html">Blogs</a></h4>
+        <h4><a href="account.html">Account</a></h4>
+        <h4><a href="#" onclick="logout()">Logout</a></h4>
+      `;
+    } else {
+      navbar.innerHTML = `
+        <h4><a href="login.html">Login</a></h4>
+        <h4><a href="signup.html">Signup</a></h4>
+      `;
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      location.href = "index.html";
+    }
+
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username && password) {
+        localStorage.setItem("isLoggedIn", "true");
+        location.href = "index.html";
+      } else {
+        alert("Please enter both username and password.");
+      }
+    }
+  </script>
+</body>
+</html>

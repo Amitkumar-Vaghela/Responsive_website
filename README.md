@@ -4,6 +4,16 @@ A modern, responsive website built with **HTML**, **CSS**, and **JavaScript**. D
 
 🔗 **Live Demo:**  
 👉 [responsive-website-seven-alpha.vercel.app](https://responsive-website-seven-alpha.vercel.app)
+## 📸 Screenshots
+
+### 🖥️ Dashboard  
+![Dashboard](https://github.com/Amitkumar-Vaghela/Responsive_website/blob/master/IMAGES/Screenshot%202025-07-08%20220231.png)
+
+### 🔐 Signup Page  
+![Signup](https://github.com/Amitkumar-Vaghela/Responsive_website/blob/master/IMAGES/Screenshot%202025-07-08%20220243.png)
+
+### 🔑 Signin Page  
+![Signin](https://github.com/Amitkumar-Vaghela/Responsive_website/blob/master/IMAGES/Screenshot%202025-07-08%20220259.png)
 
 ---
 

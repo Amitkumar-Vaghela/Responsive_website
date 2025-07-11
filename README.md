@@ -38,14 +38,6 @@ A modern, responsive website built with **HTML**, **CSS**, and **JavaScript**. D
 
 ---
 
-## 📂 Project Structure
-responsive-website/
-├── index.html # Main HTML file
-├── style.css # CSS styles
-├── script.js # Optional JavaScript
-├── assets/ # Images or other static files
-└── README.md # Project documentation
-
 
 ---
 
